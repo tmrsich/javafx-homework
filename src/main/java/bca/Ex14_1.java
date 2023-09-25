@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class _Ex14_1 extends Application {
+public class Ex14_1 extends Application {
     @Override
     public void start(Stage primaryStage) {
         GridPane gridpane = new GridPane();

@@ -10,7 +10,7 @@ import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 
-public class _Ex14_11 extends Application {
+public class Ex14_11 extends Application {
     public static void main(String[] args) {
         Application.launch(args);
     }

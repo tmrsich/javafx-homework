@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class _Ex14_3 extends Application {
+public class Ex14_3 extends Application {
     @Override
     public void start(Stage primaryStage) {
         HBox hbox = new HBox();
