@@ -8,18 +8,31 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class Ex14_3 extends Application {
-
     public static void main(String[] args) {
         Application.launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) {
-        HBox hbox = new HBox();
+        Cards cards = new Cards();
+     
+        // Barebones javafx to create a stage, set its title, and display it
+        Scene scene = new Scene(cards, 600, 600);
+        primaryStage.setTitle("Exercise 14.3");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+}
+
+class Cards extends HBox {
+    public Cards() {
+        
+        // Generates 3 random numbers to pick from an array of cards
         int randomNumber1 = (int)(Math.random()*52)+1;
         int randomNumber2 = (int)(Math.random()*52)+1;
         int randomNumber3 = (int)(Math.random()*52)+1;
-        
+
+        // Contains the filepaths of each card, filling in the random number with the file extension .png to ensure each card is selected properly
         String[] cardPaths = {
             "file:images/card/" + randomNumber1 + ".png",
             "file:images/card/" + randomNumber2 + ".png",
@@ -55,71 +68,10 @@ public class Ex14_3 extends Application {
         ImageView view3 = new ImageView();
         view3.setImage(new Image(cardPaths[2]));
 
-        hbox.getChildren().add(view1);
-        hbox.getChildren().add(view2);
-        hbox.getChildren().add(view3);
-
-        Scene scene = new Scene(hbox, 600, 600);
-        primaryStage.setTitle("Exercise 14.3");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        getChildren().addAll(
+            view1,
+            view2,
+            view3
+        );
     }
 }
-
-// package bca;
-
-// import javafx.application.Application;
-// import javafx.scene.Scene;
-// import javafx.scene.image.Image;
-// import javafx.scene.image.ImageView;
-// import javafx.scene.layout.HBox;
-// import javafx.stage.Stage;
-
-// public class Ex14_3 extends Application {
-//     public static void main(String[] args) {
-//         Application.launch(args);
-//     }
-
-//     @Override
-//     public void start(Stage primaryStage) {
-//         Cards cards = new Cards();
-     
-//         // Barebones javafx to create a stage, set its title, and display it
-//         Scene scene = new Scene(cards, 600, 600);
-//         primaryStage.setTitle("Exercise 14.3");
-//         primaryStage.setScene(scene);
-//         primaryStage.show();
-//     }
-// }
-
-// class Cards extends HBox {
-//     public Cards() {
-        
-//         // Generates 3 random numbers to pick from an array of cards
-//         int randomNumber1 = (int)(Math.random()*52)+1;
-//         int randomNumber2 = (int)(Math.random()*52)+1;
-//         int randomNumber3 = (int)(Math.random()*52)+1;
-
-//         // Contains the filepaths of each card, filling in the random number with the file extension .png to ensure each card is selected properly
-//         String[] cardPaths = {
-//             "file:images/card/" + randomNumber1 + ".png",
-//             "file:images/card/" + randomNumber2 + ".png",
-//             "file:images/card/" + randomNumber3 + ".png"
-//         };
-
-//         ImageView view1 = new ImageView();
-//         view1.setImage(new Image(cardPaths[randomNumber1]));
-
-//         ImageView view2 = new ImageView();
-//         view2.setImage(new Image(cardPaths[randomNumber2]));
-
-//         ImageView view3 = new ImageView();
-//         view3.setImage(new Image(cardPaths[randomNumber3]));
-
-//         getChildren().addAll(
-//             view1,
-//             view2,
-//             view3
-//         );
-//     }
-// }
