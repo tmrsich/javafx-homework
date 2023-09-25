@@ -12,18 +12,20 @@ public class Ex14_12 extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Pane pane = new Pane();
-        
+        Pane p = new Pane();
 
 
 
 
 
-        Scene scene = new Scene(pane);
+
+        Scene scene = new Scene(p);
         primaryStage.setTitle("Exercise 14.12");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    
     
     
 }
