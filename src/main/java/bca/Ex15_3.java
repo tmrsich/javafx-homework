@@ -29,7 +29,7 @@ public class Ex15_3 extends Application {
         Button btn2 = new Button("Right");
         Button btn3 = new Button("Up");
         Button btn4 = new Button("Down");
-        ellipse = getEllipse(); // Respass - 
+        ellipse = getEllipse(); // Respass - Initializing a private class variable to later be called in the start method
 
         // Creates event handlers for the buttons, so that the CenterX and CenterY attributes of the ellipse are adjusted accordingly
         btn1.setOnAction(event -> moveEllipse(-10, 0));
