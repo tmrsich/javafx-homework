@@ -16,7 +16,7 @@ public class Ex15_12 extends Application {
     public void start(Stage primaryStage) {
         circleWithText circle = new circleWithText();
 
-        Scene scene = new Scene(circle, 400, 400);
+        Scene scene = new Scene(circle, 500, 500);
         primaryStage.setTitle("Exercise 15.12");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -24,6 +24,7 @@ public class Ex15_12 extends Application {
 }
 
 class circleWithText extends Pane {
+    private Text text;
     public circleWithText() {
         Ellipse ellipse = new Ellipse();
         ellipse.setCenterX(100);
@@ -33,12 +34,16 @@ class circleWithText extends Pane {
         ellipse.setStrokeWidth(10);
         ellipse.setStroke(Color.BLACK);
         ellipse.setFill(Color.RED);
-        getChildren().addAll(ellipse, getText());
-    }
 
-    public Text getText() {
-        Text text = new Text(200, 200, "Outside the circle");
+        // Initializes a text node to be used on the mouse event handlers
+        text = new Text(175, 100, "You have neither entered nor exited the circle");
 
-        return text;
+        // Creates the event handler for when the mouse enters the circle
+        ellipse.setOnMouseEntered(event -> { text.setText("You have entered the circle"); });
+
+        // Creates the event handler for when the mouse exits the circle
+        ellipse.setOnMouseExited(event -> { text.setText("You have exited the circle"); });
+
+        getChildren().addAll(ellipse, text);
     }
 }
