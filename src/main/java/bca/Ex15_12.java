@@ -24,8 +24,8 @@ public class Ex15_12 extends Application {
 }
 
 class circleWithText extends Pane {
-    private Text text;
     public circleWithText() {
+
         Ellipse ellipse = new Ellipse();
         ellipse.setCenterX(100);
         ellipse.setCenterY(60);
@@ -36,7 +36,7 @@ class circleWithText extends Pane {
         ellipse.setFill(Color.RED);
 
         // Initializes a text node to be used on the mouse event handlers
-        text = new Text(175, 100, "You have neither entered nor exited the circle");
+        Text text = new Text(175, 75, "You have neither entered nor exited the circle");
 
         // Creates the event handler for when the mouse enters the circle
         ellipse.setOnMouseEntered(event -> { text.setText("You have entered the circle"); });
