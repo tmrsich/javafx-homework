@@ -1,6 +1,7 @@
 package bca;
 
 import javafx.application.Application;
+import javafx.beans.property.DoubleProperty;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -13,20 +14,25 @@ public class Ex15_16 extends Application {
         Application.launch(args);
     }
 
-    public void start(Stage primaryStage) { 
+    public void start(Stage primaryStage) {
+
+        // Creates a pane, 2 ellipses, and a line
         Pane pane = new Pane();
         Vertice v1 = new Vertice(100, 250, 50);
         Vertice v2 = new Vertice(400, 250, 50);
-        
-        // Calculates the coordinates of the two circles
-        int v1centerX = v1.getCenterX();
-        int v1centerY = v1.getCenterY();
-        int v2centerX = v2.getCenterX();
-        int v2centerY = v2.getCenterY();
+        Line line = getLine();
 
-        // Sets the x1, y1, x2, y2 values (aka startX, startY, endX, endY) to the values calculated previously
-        Line line = getLine(v1centerX, v1centerY, v2centerX, v2centerY);
-        // line.startXProperty() // Respass included
+        // Binds the line's starting x and y values to the x and y values of the 1st ellipse
+        line.startXProperty().bind(v1.centerXProperty());
+        line.startYProperty().bind(v1.centerYProperty());
+        
+        // Binds the line's starting x and y values to the x and y values of the 2nd ellipse
+        line.endXProperty().bind(v2.centerXProperty());
+        line.endYProperty().bind(v2.centerYProperty());
+
+        v1.setOnDragDetected(event -> );
+
+        // Adds everything to the pane, creates a scene 500x500, sets the title, sets the primaryStage to a specific scene, and shows it
         pane.getChildren().addAll(v1, v2, line);
         Scene scene = new Scene(pane, 500, 500);
         primaryStage.setTitle("Exercise 15.6");
@@ -34,28 +40,24 @@ public class Ex15_16 extends Application {
         primaryStage.show();
     }
 
-        
-    public Line getLine(int x1, int y1, int x2, int y2) {
+    // Method to create a line
+    public Line getLine() {
         Line line = new Line();
-        line.setStartX(x1);
-        line.setStartY(y1);
-        line.setEndX(x2);
-        line.setEndY(y2);
+        line.setStartX(0);
+        line.setStartY(0);
+        line.setEndX(0);
+        line.setEndY(0);
         line.setStrokeWidth(10);
         line.setStroke(Color.BLACK);
         return line;
     }
 }
 
+// Class to create a "vertice" or in this case an ellipse and adds it to the pane
 class Vertice extends Pane {
-    private int CenterX;
-    private int CenterY;
-
+    private Ellipse ellipse;
     public Vertice(int x, int y, int r) {
-        CenterX = x;
-        CenterY = y;
-
-        Ellipse ellipse = new Ellipse();
+        ellipse = new Ellipse();
         ellipse.setCenterX(x);
         ellipse.setCenterY(y);
         ellipse.setRadiusX(r);
@@ -66,11 +68,12 @@ class Vertice extends Pane {
         getChildren().add(ellipse);
     }
 
-    public int getCenterX() {
-        return CenterX;
+    // Custom methods to make the ellipse center x and y properties accessible outside of the vertices class
+    public DoubleProperty centerXProperty() {
+        return ellipse.centerXProperty();
     }
 
-    public int getCenterY() {
-        return CenterY;
+    public DoubleProperty centerYProperty() {
+        return ellipse.centerYProperty();
     }
 }
