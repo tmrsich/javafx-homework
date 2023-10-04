@@ -26,7 +26,7 @@ public class Ex15_16 extends Application {
 
         // Sets the x1, y1, x2, y2 values (aka startX, startY, endX, endY) to the values calculated previously
         Line line = getLine(v1centerX, v1centerY, v2centerX, v2centerY);
-        line.startXProperty() // Respass included
+        // line.startXProperty() // Respass included
         pane.getChildren().addAll(v1, v2, line);
         Scene scene = new Scene(pane, 500, 500);
         primaryStage.setTitle("Exercise 15.6");
