@@ -30,8 +30,6 @@ public class Ex15_16 extends Application {
         line.endXProperty().bind(v2.centerXProperty());
         line.endYProperty().bind(v2.centerYProperty());
 
-        v1.setOnDragDetected(event -> );
-
         // Adds everything to the pane, creates a scene 500x500, sets the title, sets the primaryStage to a specific scene, and shows it
         pane.getChildren().addAll(v1, v2, line);
         Scene scene = new Scene(pane, 500, 500);
@@ -65,6 +63,17 @@ class Vertice extends Pane {
         ellipse.setStrokeWidth(1);
         ellipse.setStroke(Color.BLACK);
         ellipse.setFill(Color.RED);
+
+        ellipse.setOnMousePressed(event -> {
+            ellipse.setCenterX(event.getSceneX());
+            ellipse.setCenterY(event.getSceneY());
+        });
+
+        ellipse.setOnMouseDragged(event -> {
+            ellipse.setCenterX(event.getSceneX());
+            ellipse.setCenterY(event.getSceneY());
+        });
+
         getChildren().add(ellipse);
     }
 
