@@ -31,7 +31,7 @@ public class Ex15_16 extends Application {
         line.endYProperty().bind(v2.centerYProperty());
 
         // Adds everything to the pane, creates a scene 500x500, sets the title, sets the primaryStage to a specific scene, and shows it
-        pane.getChildren().addAll(v1, v2, line);
+        pane.getChildren().addAll(line, v1, v2);
         Scene scene = new Scene(pane, 500, 500);
         primaryStage.setTitle("Exercise 15.6");
         primaryStage.setScene(scene);
