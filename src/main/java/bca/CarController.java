@@ -7,7 +7,18 @@ import javafx.scene.shape.Rectangle;
 
 class Car extends BorderPane {
     public Car() {
-        getChildren().addAll(getRectangle(125, 200, 250, 100), getCircle1(175, 330, 30), getCircle2(315, 330, 30));
+
+        // Creates all the proper objects
+        Rectangle r = getRectangle(0, 0, 250, 100);
+        Circle c1 = getCircle1(50, 125, 30);
+        Circle c2 = getCircle2(200, 125, 30);
+
+        // Binds the rectangle layout properties to the borderpane
+        layoutXProperty().bind(widthProperty().subtract(r.getWidth()).divide(1.5));
+        layoutYProperty().bind(heightProperty().subtract(r.getHeight()).divide(1.5));
+
+        // Gets the rectangle, circle1, and circle2 and adds them to the border pane
+        getChildren().addAll(r, c1, c2);
     }
 
     public Rectangle getRectangle(int x, int y, int w, int h) {
