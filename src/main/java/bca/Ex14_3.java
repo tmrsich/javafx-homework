@@ -59,19 +59,10 @@ class Cards extends HBox {
         hbox.getChildren().add(view);
         */
 
-        ImageView view1 = new ImageView();
-        view1.setImage(new Image(cardPaths[0]));
+        ImageView view1 = new ImageView(new Image(cardPaths[0]));
+        ImageView view2 = new ImageView(new Image(cardPaths[1]));
+        ImageView view3 = new ImageView(new Image(cardPaths[2]));
 
-        ImageView view2 = new ImageView();
-        view2.setImage(new Image(cardPaths[1]));
-
-        ImageView view3 = new ImageView();
-        view3.setImage(new Image(cardPaths[2]));
-
-        getChildren().addAll(
-            view1,
-            view2,
-            view3
-        );
+        getChildren().addAll(view1, view2, view3);
     }
 }
