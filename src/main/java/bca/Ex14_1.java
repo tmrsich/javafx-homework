@@ -16,6 +16,7 @@ public class Ex14_1 extends Application {
     @Override
     public void start(Stage primaryStage) {
         Flags flags = new Flags();
+        GridPane gp = new GridPane();
 
         Scene scene = new Scene(flags);
         primaryStage.setTitle("Exercise 14.1");
