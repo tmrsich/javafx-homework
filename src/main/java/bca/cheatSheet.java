@@ -19,6 +19,15 @@ import javafx.stage.Stage;
     VBox vbox = new VBox();
     */
 
+// To add rows and columns to a gridpane easily, simply add whichever elements you want to a specific row by using addRow or addColumn
+    /*
+    For example,
+    GridPane gp = new GridPane();
+    Rectangle r = new Rectangle(50, 50, 100, 50);
+    Rectangle r1 = new Rectangle(50, 200, 100, 50);
+    gp.addRow(r, r1); <-- Adds the 2 rectangle in a single row
+    gp.addColumn(r, r1); <-- Adds the 2 rectangles in a single column
+    */
 // Initializes shapes
     /*
     Line l = new Line(startX, startY, endX, endY);
@@ -43,6 +52,28 @@ import javafx.stage.Stage;
     shape.setFill(Color.BLACK);
     */
 
+// Initializes some text
+    /*
+    Text t = new Text(String_Value);
+    t.setText(newString_Value);
+    */
+
+// Initializes some JavaFX UI Components
+    /*
+    Label label = new Label(String_Value);
+    label.setText(newString_Value);
+
+    Button btn = new Button(String_Value);
+    
+// Two methods that do something when the mouse cursor enters and exits the buttons
+    btn.setOnMouseEntered(event -> {
+        btn.setText("You have entered the button");
+    });
+
+    btn.setOnMouseExited(event -> {
+        btn.setText("You have exited the button");
+    });
+    */
 public class cheatSheet extends Application {
     public static void main(String[] args) {
         Application.launch(args);
