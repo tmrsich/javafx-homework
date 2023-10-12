@@ -62,7 +62,7 @@ public class Ex15_16 extends Application {
     // Private method that returns nothing but sets the text to the calculated distance variable
     private void lineDistance(Text text, Ellipse v1, Ellipse v2) {
         double distance = Math.sqrt(Math.pow(v2.getCenterX() - v1.getCenterX(), 2) + Math.pow(v2.getCenterY() - v1.getCenterY(), 2));
-        text.setText("Distance: " + String.format("%.2f", distance) + "Units");
+        text.setText("Distance: " + String.format("%.2f", distance) + " Units");
     }
 
     // Method to initialize a vertice
