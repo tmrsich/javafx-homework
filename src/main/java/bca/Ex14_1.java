@@ -47,6 +47,7 @@ class Flags extends GridPane {
             flagViews[i].setFitHeight(250);
             add(flagViews[i], row, col);
 
+            // Easy method to create a 2x2 grid
             col++;
             if (col > 1) {
                 col = 0;
