@@ -64,7 +64,7 @@ import javafx.stage.Stage;
     label.setText(newString_Value);
 
     Button btn = new Button(String_Value);
-    
+
 // Two methods that do something when the mouse cursor enters and exits the buttons
     btn.setOnMouseEntered(event -> {
         btn.setText("You have entered the button");
@@ -74,6 +74,20 @@ import javafx.stage.Stage;
         btn.setText("You have exited the button");
     });
     */
+
+// Initializes an ImageView and sets an image to it
+    /*
+        ImageView view = new ImageView(new Image("file:images/picture.png"); 
+    */
+// Initializes binding properties; Let's say for instance you want to bind the width and height of a rectangle you just created to the width and height of the window you created, and you want it to be scalable
+    /*
+        Rectangle r = new Rectangle(100, 100, 0, 0); <-- Rectangle positioned at 100, 100 with width and height properties of 0, since they will be "binded" (made identical) to the pane widths and heights
+        r.widthProperty().bind(p.widthProperty().subtract(200));
+        r.heightProperty().bind(p.heightProperty().subtract(200));
+    */
+
+// To get the coordinates of the mouse cursor in an event handler, use the constructor methods to do this: event.getX() AND event.getY()
+
 public class cheatSheet extends Application {
     public static void main(String[] args) {
         Application.launch(args);
@@ -81,7 +95,6 @@ public class cheatSheet extends Application {
 
     public void start(Stage primaryStage) {
         Pane p = new Pane();
-
         
         double[] doubles = {
             0.0, 0.0,
@@ -94,7 +107,7 @@ public class cheatSheet extends Application {
         basic.setStrokeWidth(5);
         basic.setFill(Color.TRANSPARENT);
 
-        p.getChildren().add(basic);
+        p.getChildren().addAll(basic);
         Scene scene = new Scene(p, 500, 500);
         primaryStage.setTitle("Base");
         primaryStage.setScene(scene);
