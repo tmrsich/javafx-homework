@@ -32,10 +32,10 @@ public class Ex15_3 extends Application {
         ellipse = getEllipse(); // Respass - Initializing a private class variable to later be called in the start method
 
         // Creates event handlers for the buttons, so that the CenterX and CenterY attributes of the ellipse are adjusted accordingly
-        btn1.setOnAction(event -> moveEllipse(-10, 0));
-        btn2.setOnAction(event -> moveEllipse(10, 0));
-        btn3.setOnAction(event -> moveEllipse(0, -10));
-        btn4.setOnAction(event -> moveEllipse(0, 10));
+        btn1.setOnMouseClicked(event -> moveEllipse(-10, 0));    // These can all technically be btn.setOnAction, but btn.setOnMouseClicked is more intuitive
+        btn2.setOnMouseClicked(event -> moveEllipse(10, 0));   // These can all technically be btn.setOnAction, but btn.setOnMouseClicked is more intuitive
+        btn3.setOnMouseClicked(event -> moveEllipse(0, -10));    // These can all technically be btn.setOnAction, but btn.setOnMouseClicked is more intuitive
+        btn4.setOnMouseClicked(event -> moveEllipse(0, 10));   // These can all technically be btn.setOnAction, but btn.setOnMouseClicked is more intuitive
         
         // Sets insets for the buttons so they don't appear crushed at the bottom
         hbox.setAlignment(Pos.CENTER);
